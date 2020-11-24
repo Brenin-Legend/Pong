@@ -8,13 +8,18 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = Speed;   
-            }
+        GetComponent<Rigidbody>().velocity = Speed;
+    }
 
     // Update is called once per frame
     void Update()
     {
-   //transform.position += Speed * Time.deltaTime;
+        //transform.position += Speed * Time.deltaTime;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log($"Ball collided with {collision.collider.name}");        
     }
 }
 

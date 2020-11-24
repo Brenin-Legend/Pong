@@ -4,30 +4,43 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Vector3 Speed;
-    // Start is called before the first frame update
+    public Vector3 SpeedVertical;
+    public Vector3 SpeedHorizontal;
+    public Vector3 SpeedDepth;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position  += Speed * Time.deltaTime;
+            transform.position  += SpeedVertical * Time.deltaTime;
         }
-
-    
-   
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= Speed * Time.deltaTime;
+            transform.position -= SpeedVertical * Time.deltaTime;
         }
 
-    }
-   
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += SpeedHorizontal * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position -= SpeedHorizontal * Time.deltaTime;
+        }
 
+        if (Input.GetKey(KeyCode.Q))
+        {
+            transform.position += SpeedDepth * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.position -= SpeedDepth * Time.deltaTime;
+        }
+    }
 }
  
